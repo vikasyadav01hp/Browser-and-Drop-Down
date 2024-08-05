@@ -46,8 +46,13 @@ $(document).ready(function() {
             alert('You cannot delete the primary browser.');
             console.log('Attempted to delete a primary browser.');
         } else {
-            parentItem.remove();
-            console.log('Item removed from the browser list.');
+            if(itemCounter===1){
+                alert("Last item is not remove")
+            }else{
+                parentItem.remove();
+                itemCounter--;
+                console.log('Item removed from the browser list.');
+            }
         }
     });
 
@@ -67,8 +72,8 @@ $(document).ready(function() {
         let file = event.target.files[0];
         let imgElement = $(this).siblings('.browser-img');
 
-        reader.onload = function(e) {
-            imgElement.attr('src', e.target.result);
+        reader.onload = function(e) {                 // onload is exicute when image is upload
+            imgElement.attr('src', e.target.result);    //attr specify the tageted img
             console.log('Image updated.');
         }
 
