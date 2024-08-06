@@ -5,8 +5,8 @@ $(document).ready(function() {
         console.log('Add Browser button clicked.');
 
         let allImagesSelected = true;
-        $('.file-input').each(function() {
-            if (!$(this).val()) {
+        $('.file-input').each(function() {  
+            if (!$(this).val()) {          //check all the file is uploaded or not
                 allImagesSelected = false;
             }
         });
